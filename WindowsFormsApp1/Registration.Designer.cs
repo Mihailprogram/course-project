@@ -54,6 +54,7 @@
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(116, 31);
             this.textBoxLogin.TabIndex = 1;
+            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             // 
             // textBoxPassword
             // 
@@ -73,6 +74,7 @@
             this.label1.Size = new System.Drawing.Size(82, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "Логин";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -83,6 +85,7 @@
             this.label2.Size = new System.Drawing.Size(96, 29);
             this.label2.TabIndex = 6;
             this.label2.Text = "Пароль";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -92,6 +95,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(131, 125);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button1
             // 
@@ -124,6 +128,7 @@
             this.label3.Size = new System.Drawing.Size(64, 29);
             this.label3.TabIndex = 11;
             this.label3.Text = "Имя";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBoxFirstName
             // 
@@ -132,6 +137,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(116, 31);
             this.textBoxFirstName.TabIndex = 12;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // label4
             // 
@@ -142,6 +148,7 @@
             this.label4.Size = new System.Drawing.Size(124, 29);
             this.label4.TabIndex = 13;
             this.label4.Text = "Фамилия";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxLastName
             // 
@@ -150,6 +157,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(116, 31);
             this.textBoxLastName.TabIndex = 14;
+            this.textBoxLastName.TextChanged += new System.EventHandler(this.textBoxLastName_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -157,6 +165,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 15;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
@@ -167,6 +176,7 @@
             this.label5.Size = new System.Drawing.Size(193, 29);
             this.label5.TabIndex = 16;
             this.label5.Text = "Дата рождения";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -177,6 +187,7 @@
             this.label6.Size = new System.Drawing.Size(141, 29);
             this.label6.TabIndex = 17;
             this.label6.Text = "Вид спорта";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBoxSport
             // 
@@ -191,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 543);
+            this.ClientSize = new System.Drawing.Size(527, 543);
             this.Controls.Add(this.comboBoxSport);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

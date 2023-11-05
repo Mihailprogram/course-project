@@ -12,39 +12,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Registration : Form
+    public partial class FormCreatCoach : Form
     {
-
         static String connection = Properties.Settings.Default.pgConnection;
 
         NpgsqlConnection cnct = new NpgsqlConnection(connection);
-
-        public bool flagadmin = true;
-        public Registration()
+        public FormCreatCoach()
         {
             InitializeComponent();
             comboBoxSport.DropDownStyle = ComboBoxStyle.DropDownList;
-            //this.FormClosing += new FormClosingEventHandler(Registration_FormClosing);
-
+           // this.FormClosing += new FormClosingEventHandler(FormCreatCoach_FormClosing);
         }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            textBoxPassword.PasswordChar = '•';
-        }
-
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                textBoxPassword.PasswordChar = '\0'; // Отключаем замену символов
-            }
-            else
-            {
-                textBoxPassword.PasswordChar = '•'; // Включаем замену символов
-            }
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -53,6 +32,7 @@ namespace WindowsFormsApp1
             string lastName = textBoxLastName.Text;
             string firstName = textBoxFirstName.Text;
             string selectedSport = comboBoxSport.Text;
+            int experience = Convert.ToInt32(textBoxexp.Text);
             DateTime birthDate = dateTimePicker1.Value;
             DateTime currentDate = DateTime.Today;
 
@@ -67,7 +47,7 @@ namespace WindowsFormsApp1
 
                 // Вставка данных в таблицу "user"
                 string insertUserSql = "INSERT INTO sportclub.user " +
-                    "(login, password, roleid) VALUES (@login, @password, 1) RETURNING iduser";
+                    "(login, password, roleid) VALUES (@login, @password, 2) RETURNING iduser";
                 using (NpgsqlCommand cmd = new NpgsqlCommand(insertUserSql, cnct))
                 {
                     cmd.Parameters.AddWithValue("@login", login);
@@ -78,17 +58,18 @@ namespace WindowsFormsApp1
 
 
                     // Вставка данных в таблицу "sportman"
-                    
-                    string ins = "SELECT sportclub.insert_sportsman(@age,@selectedSport,@firstName,@lastName,@birthdate,@userId)";
+
+                    string ins = "SELECT sportclub.insert_coach(@firstName,@age,@experience,@selectedSport,@lastName,@birthdate,@userId)";
                     using (NpgsqlCommand sportmanCmd = new NpgsqlCommand(ins, cnct))
                     {
-      
+
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@age", NpgsqlDbType.Integer)).Value = age;
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@selectedSport", NpgsqlDbType.Varchar)).Value = selectedSport;
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@firstName", NpgsqlDbType.Varchar)).Value = firstName;
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@lastName", NpgsqlDbType.Varchar)).Value = lastName;
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@birthdate", NpgsqlDbType.Date)).Value = birthDate;
                         sportmanCmd.Parameters.Add(new NpgsqlParameter("@userId", NpgsqlDbType.Integer)).Value = userId;
+                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@experience", NpgsqlDbType.Integer)).Value = experience;
                         sportmanCmd.ExecuteNonQuery();
                     }
                 }
@@ -101,43 +82,14 @@ namespace WindowsFormsApp1
             }
 
             // Отобразите форму Registration
-            if (flagadmin == true)
-            {
-                this.Close();
-                cnct.Close();
-                Application.OpenForms["Authorization"].Show();
-            }
-            else
-            {
-                this.Close();
-                cnct.Close();
-                Application.OpenForms["FormAdmin"].Show();
-            }
-            
-        }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            comboBoxSport.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.Close();
+            cnct.Close();
+            Application.OpenForms["FormAdmin"].Show();
 
         }
 
-        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Здесь вы можете добавить проверки или действия перед закрытием формы
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.No)
-            {
-                
-                e.Cancel = true;
-            }
-            else
-            {
-                Application.OpenForms["Authorization"].Close();
-            }
-        }
-        private void Registration_Load(object sender, EventArgs e)
+        private void FormCreatCoach_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -169,59 +121,36 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void FormCreatCoach_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Здесь вы можете добавить проверки или действия перед закрытием формы
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.No)
+            {
+                // Если пользователь нажал "Нет", отменим закрытие формы
+                e.Cancel = true;
+            }
+            else
+            {
+                Application.OpenForms["Authorization"].Close();
+            }
+        }
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            textBoxPassword.PasswordChar = '•';
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxLastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            if (checkBox1.Checked)
+            {
+                textBoxPassword.PasswordChar = '\0'; // Отключаем замену символов
+            }
+            else
+            {
+                textBoxPassword.PasswordChar = '•'; // Включаем замену символов
+            }
         }
     }
 }

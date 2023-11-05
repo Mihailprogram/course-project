@@ -21,8 +21,17 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+        public void ClearTextFields()
+        {
+            // Очищаем текстовые поля
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+        }
         private void Authorization_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
             try
             {
                 if (cnct.State == ConnectionState.Closed)
@@ -56,22 +65,40 @@ namespace WindowsFormsApp1
 
                 object result = cmd.ExecuteScalar();
                 int count = Convert.ToInt32(result);
+                //
+                string sqlrole = "SELECT roleid FROM sportclub.user " +
+                    "WHERE login = @login and password = @password";
+                NpgsqlCommand cmdrole = new NpgsqlCommand(sqlrole, cnct);
+                cmdrole.Parameters.AddWithValue("@login", login);
+                cmdrole.Parameters.AddWithValue("@password", password);
+
+                object resultrole = cmdrole.ExecuteScalar();
+                int role = Convert.ToInt32(resultrole);
+
                 MainForm mainForm = new MainForm();
 
-
+                
 
 
                 if (count > 0)
                 {
-
-                   UserLoggedIn += (userId) => {
-                        mainForm.HandleUserLogin(userId);
-                        mainForm.userId= userId;
+                    if (role == 1)
+                    {
+                        UserLoggedIn += (userId) =>
+                        {
+                            mainForm.HandleUserLogin(userId);
+                            mainForm.userId = userId;
+                            this.Hide();
+                            mainForm.Show();
+                        };
+                        UserLoggedIn?.Invoke(count);
+                    }
+                    if (role == 3)
+                    {
+                        FormAdmin formAdmin = new FormAdmin();
                         this.Hide();
-                        mainForm.Show();
-                    };
-                    UserLoggedIn?.Invoke(count);
-
+                        formAdmin.Show();
+                    }
                 }
                 else
                 {

@@ -100,11 +100,29 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreatCoach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreatCoach.Designer.cs">
+      <DependentUpon>FormCreatCoach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTraning.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTraning.Designer.cs">
       <DependentUpon>FormTraning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpsportsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpsportsman.Designer.cs">
+      <DependentUpon>FormUpsportsman.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -123,8 +141,17 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreatCoach.resx">
+      <DependentUpon>FormCreatCoach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTraning.resx">
       <DependentUpon>FormTraning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpsportsman.resx">
+      <DependentUpon>FormUpsportsman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
