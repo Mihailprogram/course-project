@@ -60,9 +60,14 @@ namespace WindowsFormsApp1
                 string last_name = "";
                 week = 0;
                 time = 0;
-                
+
+                string sqlinj = "SELECT COUNT(*) FROM sportclub.injury WHERE id_sportsman=@id_sportsman";
+                NpgsqlCommand cmdinj = new NpgsqlCommand(sqlinj, cnct);
+                cmdinj.Parameters.AddWithValue("@id_sportsman", id_sportsman);
+                object resulinj = cmdinj.ExecuteScalar();
+                int injur = Convert.ToInt32(resulinj);
                 //MessageBox.Show(count.ToString());
-                if (traning > 0)
+                    if (traning > 0 && injur==0)
                 {
                     button1.Visible = false;
                     string sqls = "SELECT * FROM sportclub.get_training_info(@id_sportsman)";
@@ -86,8 +91,19 @@ namespace WindowsFormsApp1
                 {
                     button2.Visible = false;
                     button3.Visible = false;
-                    label4.Text = "Вы пока не записаны на тренировки";
+                    if (injur == 0)
+                    {
+                        label4.Text = "Вы пока не записаны на тренировки";
+                    }
+                    else
+                    {
+                        button1.Visible = false;
+                        string sqlinj1 = "SELECT end_date FROM sportclub.injury WHERE id_sportsman=@id_sportsman";
+                        NpgsqlCommand cmdinj1 = new NpgsqlCommand(sqlinj1, cnct);
+                        cmdinj1.Parameters.AddWithValue("@id_sportsman", id_sportsman);
+                        label4.Text = $"Вы травмированны и пока не можете тренироваться";
 
+                    }
                 }
                 cnct.Close();
             }
@@ -152,7 +168,7 @@ namespace WindowsFormsApp1
             formTraning.id_sportsman = id_sportsman;
             formTraning.idUser = userId;
             formTraning.Show();
-            //cnct.Close();
+            cnct.Close();
             flagUser = false;
             this.Close();
         }
@@ -213,7 +229,7 @@ namespace WindowsFormsApp1
             formTraning.id_sportsman = id_sportsman;
             formTraning.flag = true;
             formTraning.SetData(new_str,week,time);
-            formTraning.Show();
+           formTraning.Show();
             flagUser = false;
             this.Close();
             cnct.Close();
@@ -229,22 +245,11 @@ namespace WindowsFormsApp1
                     MessageBoxDefaultButton.Button2);
             if (result == DialogResult.Yes)
             {
-                //Application.OpenForms["AuthorizationFrom"].Close();
                 flagUser = false;
                 this.Close();
                 Authorization authorization = new Authorization();
                 authorization.Show();       
-               // Application.OpenForms["Authorization"].Close();
-                /*
-                Authorization authForm = (Authorization)Application.OpenForms["Authorization"];
-                this.Close();
-                if (authForm != null)
-                {
-                    authForm.ClearTextFields();
-
-                    authForm.Show();
-                }
-                */
+               
             }
 
         }

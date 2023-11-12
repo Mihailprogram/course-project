@@ -192,13 +192,44 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                    string data1 = selectedRow.Cells["Имя"].Value.ToString();
+                    string data2 = selectedRow.Cells["Фамилия"].Value.ToString();
+                    string data3 = selectedRow.Cells["Дата рождения"].Value.ToString();
+                    string data4 = selectedRow.Cells["Тип спорта"].Value.ToString();
+                    string data5 = selectedRow.Cells["Опыт"].Value.ToString();
 
+                    UPtrener uPtrener = new UPtrener();
+                    uPtrener.SetData(data1, data2, data3, data4, data5, id);
+                    uPtrener.Show();
                 }
 
             }
             else
             {
                 MessageBox.Show("Пожалуйста, выберите строку в таблице для удаление данных.");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormCup formCompet = new FormCup();
+            formCompet.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы действительно хотите выйти?",
+                    "Сообщение",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.Yes)
+            {
+                flagUser = false;
+                this.Close();
+                Authorization authorization = new Authorization();
+                authorization.Show();
+
             }
         }
     }

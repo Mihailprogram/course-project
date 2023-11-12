@@ -37,6 +37,12 @@ namespace WindowsFormsApp1
                 if (cnct.State == ConnectionState.Closed)
                     cnct.Open();
 
+                DateTime currentDate = DateTime.Now;
+                string delsql = "DELETE FROM sportclub.injury WHERE end_date < @date";
+                NpgsqlCommand cmddel = new NpgsqlCommand(delsql, cnct);
+                cmddel.Parameters.AddWithValue("@date", currentDate);
+                cmddel.ExecuteNonQuery();
+
 
             }
             catch (Exception ex)
@@ -92,6 +98,14 @@ namespace WindowsFormsApp1
                             mainForm.Show();
                         };
                         UserLoggedIn?.Invoke(count);
+                    }
+                    if (role == 2)
+                    {
+                        FormCoach formCoach = new FormCoach();
+                        formCoach.userID = count;
+                        this.Hide();
+                        formCoach.Show();
+
                     }
                     if (role == 3)
                     {

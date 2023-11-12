@@ -46,3 +46,10 @@ C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormAdmin.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormCreatCoach.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormUpsportsman.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.UPtrener.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormCup.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormCoach.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Uptrens.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormInjury.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormReckCup.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CreatResult.resources

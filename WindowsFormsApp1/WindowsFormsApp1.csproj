@@ -100,17 +100,47 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreatResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatResult.Designer.cs">
+      <DependentUpon>CreatResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCoach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCoach.Designer.cs">
+      <DependentUpon>FormCoach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreatCoach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCreatCoach.Designer.cs">
       <DependentUpon>FormCreatCoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCup.Designer.cs">
+      <DependentUpon>FormCup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInjury.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInjury.Designer.cs">
+      <DependentUpon>FormInjury.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReckCup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReckCup.Designer.cs">
+      <DependentUpon>FormReckCup.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTraning.cs">
       <SubType>Form</SubType>
@@ -138,14 +168,41 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="UPtrener.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UPtrener.Designer.cs">
+      <DependentUpon>UPtrener.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uptrens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uptrens.Designer.cs">
+      <DependentUpon>Uptrens.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatResult.resx">
+      <DependentUpon>CreatResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCoach.resx">
+      <DependentUpon>FormCoach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreatCoach.resx">
       <DependentUpon>FormCreatCoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCup.resx">
+      <DependentUpon>FormCup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInjury.resx">
+      <DependentUpon>FormInjury.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReckCup.resx">
+      <DependentUpon>FormReckCup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTraning.resx">
       <DependentUpon>FormTraning.cs</DependentUpon>
@@ -167,6 +224,12 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UPtrener.resx">
+      <DependentUpon>UPtrener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uptrens.resx">
+      <DependentUpon>Uptrens.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
