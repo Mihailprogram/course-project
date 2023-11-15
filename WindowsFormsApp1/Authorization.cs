@@ -148,5 +148,9 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void Authorization_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

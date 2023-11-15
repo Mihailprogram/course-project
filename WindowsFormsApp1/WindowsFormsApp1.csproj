@@ -168,6 +168,12 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="SPachivment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SPachivment.Designer.cs">
+      <DependentUpon>SPachivment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UPtrener.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </Compile>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPachivment.resx">
+      <DependentUpon>SPachivment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UPtrener.resx">
       <DependentUpon>UPtrener.cs</DependentUpon>

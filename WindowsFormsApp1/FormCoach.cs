@@ -100,14 +100,23 @@ namespace WindowsFormsApp1
                 string tr1 = "лет";
                 int remainder1 = Convert.ToInt32(age) ;
                 int remainder = Convert.ToInt32(expir) ;
-                if ((remainder % 10  == 1 || remainder % 10 == 2 || remainder % 10 == 3 || remainder % 10 == 4) && (remainder!=11 && remainder!=12 && remainder!=13 && remainder != 14))
+                if ((remainder % 10 == 2 || remainder % 10 == 3 || remainder % 10 == 4) && (remainder!=11 && remainder!=12 && remainder!=13 && remainder != 14))
+                {
+                    tr = "года";
+                }
+                if (remainder % 10 == 1 && (remainder != 11 && remainder != 12 && remainder != 13 && remainder != 14))
                 {
                     tr = "год";
                 }
-                if ((remainder1 % 10 == 1 || remainder1 % 10 == 2 || remainder1 % 10 == 3 || remainder1 % 10 == 4) && (remainder1 != 11 && remainder1 != 12 && remainder1 != 13 && remainder1 != 14))
+                if ((remainder1 % 10 == 2 || remainder1 % 10 == 3 || remainder1 % 10 == 4) && (remainder1 != 11 && remainder1 != 12 && remainder1 != 13 && remainder1 != 14))
+                {
+                    tr1 = "года";
+                }
+                if ((remainder1 % 10 == 1) && (remainder1 != 11 && remainder1 != 12 && remainder1 != 13 && remainder1 != 14))
                 {
                     tr1 = "год";
                 }
+
                 label1.Text = $"ТРЕНЕР: {name} {lastName}\n Опыт: {expir} {tr}\n Возраст: {age} {tr1}";
                 label1.TextAlign = ContentAlignment.MiddleRight;
                 label2.Text = $"Ваш вид спорта {typesport}";
@@ -273,7 +282,7 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count > 0 )
+            if (dataGridView1.SelectedRows.Count > 0 && allowActions == true)
             {
 
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
@@ -342,6 +351,37 @@ namespace WindowsFormsApp1
 
                 }
 
+            }
+        }
+
+        private void btAchiv_Click(object sender, EventArgs e)
+        {
+            allowActions = false;
+            try
+            {
+                NpgsqlCommand cmd1 = new NpgsqlCommand("SELECT * FROM sportclub.get_result_coach(@id_coach)", cnct);
+                cmd1.Parameters.AddWithValue("@id_coach", id_coach);
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd1);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                    dataGridView1.Columns[0].HeaderText = "Имя";
+                    dataGridView1.Columns[1].HeaderText = "Фамилия";
+                    dataGridView1.Columns[2].HeaderText = "Возраст";
+                    dataGridView1.Columns[3].HeaderText = "Название соревнования";
+                    dataGridView1.Columns[4].HeaderText = "Дата проведения";
+                    dataGridView1.Columns[5].HeaderText = "Результат соревнования(Место)";
+                }
+                else
+                {
+                    dataGridView1.Columns[0].HeaderText = "Пока нет достижений";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERR" + ex.Message);
             }
         }
     }

@@ -39,6 +39,7 @@
             this.butInjur = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.btAchiv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,11 +153,22 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // btAchiv
+            // 
+            this.btAchiv.Location = new System.Drawing.Point(801, 303);
+            this.btAchiv.Name = "btAchiv";
+            this.btAchiv.Size = new System.Drawing.Size(139, 78);
+            this.btAchiv.TabIndex = 14;
+            this.btAchiv.Text = "Достижения";
+            this.btAchiv.UseVisualStyleBackColor = true;
+            this.btAchiv.Click += new System.EventHandler(this.btAchiv_Click);
+            // 
             // FormCoach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 556);
+            this.Controls.Add(this.btAchiv);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.butInjur);
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Button butInjur;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btAchiv;
     }
 }

@@ -120,10 +120,11 @@ namespace WindowsFormsApp1
             string name = "";
             string lastName = "";
             string typesport = "";
+            string age = "";
             cnct.Open();
             try
             {
-                string sql = "SELECT id_sport_type,name,last_name FROM sportclub.sportsman " +
+                string sql = "SELECT id_sport_type,name,last_name,age FROM sportclub.sportsman " +
                         "WHERE userid = @userid";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, cnct);
@@ -133,6 +134,7 @@ namespace WindowsFormsApp1
                 {
                     name = reader["name"].ToString();
                     lastName = reader["last_name"].ToString();
+                    age = reader["age"].ToString();
                     idtypesport = Convert.ToInt32(reader["id_sport_type"]);
                 }
 
@@ -148,9 +150,17 @@ namespace WindowsFormsApp1
                     typesport = reader1["sport_type"].ToString();
                 }
                 reader1.Close();
-
-
-                label1.Text = $"{name} {lastName}";
+                string tr = "лет";
+                int remainder = Convert.ToInt32(age);
+                if (( remainder % 10 == 2 || remainder % 10 == 3 || remainder % 10 == 4) && (remainder != 11 && remainder != 12 && remainder != 13 && remainder != 14))
+                {
+                    tr = "года";
+                }
+                if (remainder % 10 == 1 && (remainder != 11 && remainder != 12 && remainder != 13 && remainder != 14))
+                {
+                    tr = "год";
+                }
+                label1.Text = $"{name} {lastName} \nВозраст:{age} {tr}";
                 label2.Text = $"Ваш вид спорта {typesport}";
 
                 cnct.Close();
@@ -271,6 +281,12 @@ namespace WindowsFormsApp1
                 }
             }
         }
-  
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SPachivment sPachivment = new SPachivment();
+            sPachivment.id_sportsman = id_sportsman;
+            sPachivment.Show();
+        }
     }
 }

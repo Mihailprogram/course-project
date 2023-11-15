@@ -38,19 +38,31 @@ namespace WindowsFormsApp1
             if (count > 0)
             {
                 dataGridView1.ReadOnly = true;
+                DateTime currentDate = DateTime.Now;
 
                 dataGridView1.BackgroundColor = Color.White;
                 try
                 {
-                    NpgsqlCommand cmd = new NpgsqlCommand("SELECT name_competition,date,id_achievments FROM sportclub.sport_competition WHERE id_type_sport = @id_type_sport", cnct);
+                    NpgsqlCommand cmd = new NpgsqlCommand("SELECT name_competition,date,id_achievments FROM sportclub.sport_competition WHERE id_type_sport = @id_type_sport and date>@date", cnct);
                     cmd.Parameters.AddWithValue("@id_type_sport", typecup);
+                    cmd.Parameters.AddWithValue("@date", currentDate);
                     NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
-                    dataGridView1.DataSource = ds.Tables[0];
-                    dataGridView1.Columns["id_achievments"].Visible = false;
-                    dataGridView1.Columns[0].HeaderText = "Название соревнования";
-                    dataGridView1.Columns[1].HeaderText = "Дата";
+                    if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = ds.Tables[0];
+                        dataGridView1.Columns["id_achievments"].Visible = false;
+                        dataGridView1.Columns[0].HeaderText = "Название соревнования";
+                        dataGridView1.Columns[1].HeaderText = "Дата";
+                    }
+                    else
+                    {
+                        button1.Visible = false;
+                        dataGridView1.Visible = false;
+                        label2.Text = "По этому виду спорта \n нет ближайших соревнований";
+                        label2.TextAlign = ContentAlignment.TopCenter;
+                    }
 
 
 
@@ -64,7 +76,7 @@ namespace WindowsFormsApp1
             {
                 button1.Visible = false;
                 dataGridView1.Visible = false;
-                label2.Text = "По этому виду спорта нет соревнований";
+                label2.Text = "По этому виду спорта \n нет ближайших соревнований";
                 label2.TextAlign = ContentAlignment.TopCenter;
             }
             
@@ -72,7 +84,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+                if (dataGridView1.SelectedRows.Count > 0)
             {
                 try { 
                     DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];

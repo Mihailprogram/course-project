@@ -53,3 +53,4 @@ C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormInjury.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormReckCup.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CreatResult.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SPachivment.resources
