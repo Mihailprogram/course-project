@@ -40,6 +40,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.btAchiv = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,94 +81,114 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(782, 232);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 251);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Location = new System.Drawing.Point(11, 464);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 57);
             this.button1.TabIndex = 7;
             this.button1.Text = "Показать список тренировок";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Location = new System.Drawing.Point(274, 464);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 57);
             this.button2.TabIndex = 8;
             this.button2.Text = "Добавить травму";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Location = new System.Drawing.Point(152, 464);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 57);
             this.button3.TabIndex = 9;
             this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button4.Location = new System.Drawing.Point(831, 513);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 31);
             this.button4.TabIndex = 10;
             this.button4.Text = "Выход";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // butInjur
             // 
+            this.butInjur.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butInjur.Location = new System.Drawing.Point(801, 207);
             this.butInjur.Name = "butInjur";
             this.butInjur.Size = new System.Drawing.Size(139, 78);
             this.butInjur.TabIndex = 11;
             this.butInjur.Text = "Список травмированны спортсменов";
-            this.butInjur.UseVisualStyleBackColor = true;
+            this.butInjur.UseVisualStyleBackColor = false;
             this.butInjur.Click += new System.EventHandler(this.butInjur_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button5.Location = new System.Drawing.Point(404, 464);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 57);
             this.button5.TabIndex = 12;
             this.button5.Text = "Записать на соревнование";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button6.Location = new System.Drawing.Point(543, 464);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(140, 57);
             this.button6.TabIndex = 13;
             this.button6.Text = "Результат соревнования";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // btAchiv
             // 
-            this.btAchiv.Location = new System.Drawing.Point(801, 303);
+            this.btAchiv.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btAchiv.Location = new System.Drawing.Point(801, 291);
             this.btAchiv.Name = "btAchiv";
             this.btAchiv.Size = new System.Drawing.Size(139, 78);
             this.btAchiv.TabIndex = 14;
             this.btAchiv.Text = "Достижения";
-            this.btAchiv.UseVisualStyleBackColor = true;
+            this.btAchiv.UseVisualStyleBackColor = false;
             this.btAchiv.Click += new System.EventHandler(this.btAchiv_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button7.Location = new System.Drawing.Point(804, 387);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(136, 71);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Список участниов соревнования";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // FormCoach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 556);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.btAchiv);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -205,5 +226,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btAchiv;
+        private System.Windows.Forms.Button button7;
     }
 }

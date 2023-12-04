@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,70 @@ namespace WindowsFormsApp1
         public FormCoach()
         {
             InitializeComponent();
+            RoundButtonCorners(button1, 40);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+
+
+
+            RoundButtonCorners(button2, 40);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
+
+
+            RoundButtonCorners(button3, 40);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+
+
+            RoundButtonCorners(button4, 20);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.FlatAppearance.BorderSize = 0;
+
+
+            RoundButtonCorners(button5, 40);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.FlatAppearance.BorderSize = 0;
+
+
+            RoundButtonCorners(button6, 40);
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.FlatAppearance.BorderSize = 0;
+
+            RoundButtonCorners(button7, 40);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.FlatAppearance.BorderSize = 0;
+
+            RoundButtonCorners(button7, 40);
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.FlatAppearance.BorderSize = 0;
+
+            
+            RoundButtonCorners(butInjur, 40);
+            butInjur.FlatStyle = FlatStyle.Flat;
+            butInjur.FlatAppearance.BorderSize = 0;
+
+
+            
+            RoundButtonCorners(btAchiv, 40);
+            btAchiv.FlatStyle = FlatStyle.Flat;
+            btAchiv.FlatAppearance.BorderSize = 0;
+
+
         }
+
+        private void RoundButtonCorners(Control control, int cornerRadius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(control.ClientRectangle.Width - cornerRadius, 0, cornerRadius, cornerRadius, 270, 90);
+            path.AddArc(control.ClientRectangle.Width - cornerRadius, control.ClientRectangle.Height - cornerRadius, cornerRadius, cornerRadius, 0, 90);
+            path.AddArc(0, control.ClientRectangle.Height - cornerRadius, cornerRadius, cornerRadius, 90, 90);
+            path.AddArc(0, 0, cornerRadius, cornerRadius, 180, 90);
+            path.CloseFigure();
+            control.Region = new Region(path);
+        }
+
         public int userID;
         public int id_coach = 0;
         public bool flagUser = true;
@@ -383,6 +447,12 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("ERR" + ex.Message);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Allspcomp allspcomp = new Allspcomp();
+            allspcomp.Show();
         }
     }
 }

@@ -54,3 +54,7 @@ C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormReckCup.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CreatResult.resources
 C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SPachivment.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Allspcomp.resources
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MaterialSkin.dll
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MetroFramework.dll
+C:\Users\Химачи\Desktop\курсовая\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\MetroFramework.Fonts.dll

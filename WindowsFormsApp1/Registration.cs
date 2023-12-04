@@ -125,16 +125,19 @@ namespace WindowsFormsApp1
         private void Registration_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Здесь вы можете добавить проверки или действия перед закрытием формы
-            DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.No)
-            {
+            if (flagadmin == true) { 
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.No)
+                {
                 
-                e.Cancel = true;
-            }
-            else
-            {
-                Application.OpenForms["Authorization"].Close();
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Application.OpenForms["Authorization"].Close();
+                }
             }
         }
         private void Registration_Load(object sender, EventArgs e)
@@ -222,6 +225,24 @@ namespace WindowsFormsApp1
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Registration_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            if (flagadmin == true)
+            {
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.No)
+                {
+
+                    e.Cancel = true;
+                }
+                else
+                {
+                    Application.OpenForms["Authorization"].Close();
+                }
+            }
         }
     }
 }

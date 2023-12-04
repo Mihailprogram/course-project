@@ -73,6 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "SPachivment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Достижения";
             this.Load += new System.EventHandler(this.SPachivment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

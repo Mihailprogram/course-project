@@ -230,6 +230,7 @@
             this.Controls.Add(this.textBoxLogin);
             this.Name = "FormCreatCoach";
             this.Text = "Регистрация тренера";
+           // this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCreatCoach_FormClosing_1);
             this.Load += new System.EventHandler(this.FormCreatCoach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
