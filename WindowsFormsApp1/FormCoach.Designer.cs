@@ -48,7 +48,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 21);
+            this.label2.Location = new System.Drawing.Point(16, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 32);
             this.label2.TabIndex = 3;
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(591, 21);
+            this.label1.Location = new System.Drawing.Point(595, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 32);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 140);
+            this.label3.Location = new System.Drawing.Point(7, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(278, 32);
             this.label3.TabIndex = 5;
@@ -77,7 +77,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 207);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 152);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -87,7 +87,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(11, 464);
+            this.button1.Location = new System.Drawing.Point(6, 409);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 57);
             this.button1.TabIndex = 7;
@@ -98,7 +98,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(274, 464);
+            this.button2.Location = new System.Drawing.Point(269, 409);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 57);
             this.button2.TabIndex = 8;
@@ -109,7 +109,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(152, 464);
+            this.button3.Location = new System.Drawing.Point(147, 409);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 57);
             this.button3.TabIndex = 9;
@@ -120,7 +120,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button4.Location = new System.Drawing.Point(831, 513);
+            this.button4.Location = new System.Drawing.Point(826, 458);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 31);
             this.button4.TabIndex = 10;
@@ -131,7 +131,7 @@
             // butInjur
             // 
             this.butInjur.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.butInjur.Location = new System.Drawing.Point(801, 207);
+            this.butInjur.Location = new System.Drawing.Point(796, 152);
             this.butInjur.Name = "butInjur";
             this.butInjur.Size = new System.Drawing.Size(139, 78);
             this.butInjur.TabIndex = 11;
@@ -142,7 +142,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Location = new System.Drawing.Point(404, 464);
+            this.button5.Location = new System.Drawing.Point(399, 409);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 57);
             this.button5.TabIndex = 12;
@@ -153,7 +153,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.Location = new System.Drawing.Point(543, 464);
+            this.button6.Location = new System.Drawing.Point(538, 409);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(140, 57);
             this.button6.TabIndex = 13;
@@ -164,7 +164,7 @@
             // btAchiv
             // 
             this.btAchiv.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btAchiv.Location = new System.Drawing.Point(801, 291);
+            this.btAchiv.Location = new System.Drawing.Point(796, 236);
             this.btAchiv.Name = "btAchiv";
             this.btAchiv.Size = new System.Drawing.Size(139, 78);
             this.btAchiv.TabIndex = 14;
@@ -175,7 +175,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7.Location = new System.Drawing.Point(804, 387);
+            this.button7.Location = new System.Drawing.Point(799, 332);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(136, 71);
             this.button7.TabIndex = 15;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 556);
+            this.ClientSize = new System.Drawing.Size(952, 498);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btAchiv);
             this.Controls.Add(this.button6);

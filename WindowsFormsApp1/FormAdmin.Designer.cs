@@ -43,9 +43,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(787, 73);
+            this.button1.Location = new System.Drawing.Point(561, 29);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 51);
+            this.button1.Size = new System.Drawing.Size(144, 59);
             this.button1.TabIndex = 0;
             this.button1.Text = "Добавить тренера";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,9 +54,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(234, 73);
+            this.button2.Location = new System.Drawing.Point(197, 26);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 61);
+            this.button2.Size = new System.Drawing.Size(168, 61);
             this.button2.TabIndex = 1;
             this.button2.Text = "Просмотр всех тренеров";
             this.button2.UseVisualStyleBackColor = false;
@@ -65,7 +65,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(55, 73);
+            this.button3.Location = new System.Drawing.Point(8, 27);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 60);
             this.button3.TabIndex = 2;
@@ -76,19 +76,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 112);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(869, 261);
             this.dataGridView1.TabIndex = 3;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Location = new System.Drawing.Point(787, 12);
+            this.button4.Location = new System.Drawing.Point(728, 29);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 46);
+            this.button4.Size = new System.Drawing.Size(138, 59);
             this.button4.TabIndex = 4;
             this.button4.Text = "Добавить спортсмена";
             this.button4.UseVisualStyleBackColor = false;
@@ -97,7 +97,7 @@
             // buttonDel
             // 
             this.buttonDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonDel.Location = new System.Drawing.Point(55, 450);
+            this.buttonDel.Location = new System.Drawing.Point(8, 404);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(141, 42);
             this.buttonDel.TabIndex = 5;
@@ -108,7 +108,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Location = new System.Drawing.Point(215, 450);
+            this.button5.Location = new System.Drawing.Point(168, 404);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(141, 42);
             this.button5.TabIndex = 6;
@@ -119,9 +119,9 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.Location = new System.Drawing.Point(628, 11);
+            this.button6.Location = new System.Drawing.Point(390, 29);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 49);
+            this.button6.Size = new System.Drawing.Size(146, 59);
             this.button6.TabIndex = 7;
             this.button6.Text = "Добавить соревнование";
             this.button6.UseVisualStyleBackColor = false;
@@ -130,7 +130,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.button7.Location = new System.Drawing.Point(844, 477);
+            this.button7.Location = new System.Drawing.Point(797, 431);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(97, 31);
             this.button7.TabIndex = 9;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 520);
+            this.ClientSize = new System.Drawing.Size(902, 471);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
