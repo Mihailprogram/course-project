@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pgConnection" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Host=localhost;Port=5433;Database=postgres;Username=postgres;Password=miha200324</Value>
+      <Value Profile="(Default)">Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=1234</Value>
     </Setting>
   </Settings>
 </SettingsFile>

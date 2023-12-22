@@ -121,21 +121,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        //private void FormCreatCoach_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    // Здесь вы можете добавить проверки или действия перед закрытием формы
-        //    DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
-
-        //    if (result == DialogResult.No)
-        //    {
-        //        // Если пользователь нажал "Нет", отменим закрытие формы
-        //        e.Cancel = true;
-        //    }
-        //    else
-        //    {
-        //        Application.OpenForms["Authorization"].Close();
-        //    }
-        //}
+       
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
             textBoxPassword.PasswordChar = '•';
@@ -152,20 +138,5 @@ namespace WindowsFormsApp1
                 textBoxPassword.PasswordChar = '•'; // Включаем замену символов
             }
         }
-
-        //private void FormCreatCoach_FormClosing_1(object sender, FormClosingEventArgs e)
-        //{
-        //    DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
-
-        //    if (result == DialogResult.No)
-        //    {
-
-        //        e.Cancel = true;
-        //    }
-        //    else
-        //    {
-        //        Application.OpenForms["Authorization"].Close();
-        //    }
-        //}
     }
 }

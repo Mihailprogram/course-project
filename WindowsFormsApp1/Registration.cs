@@ -229,20 +229,7 @@ namespace WindowsFormsApp1
 
         private void Registration_FormClosing_1(object sender, FormClosingEventArgs e)
         {
-            if (flagadmin == true)
-            {
-                DialogResult result = MessageBox.Show("Вы уверены, что хотите закрыть приложение?", "Подтверждение", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.No)
-                {
-
-                    e.Cancel = true;
-                }
-                else
-                {
-                    Application.OpenForms["Authorization"].Close();
-                }
-            }
+            
         }
     }
 }

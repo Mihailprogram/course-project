@@ -224,7 +224,38 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.Message);
             }
         }
+        public void upForms()
+        {
+            try
+            {
+                allowActions = true;
+                NpgsqlCommand cmds = new NpgsqlCommand("SELECT id_coach FROM sportclub.coach WHERE userid = @userid", cnct);
+                cmds.Parameters.AddWithValue("@userid", userID);
+                object resulid = cmds.ExecuteScalar();
+                id_coach = Convert.ToInt32(resulid);
 
+
+                NpgsqlCommand cmd1 = new NpgsqlCommand("SELECT * FROM sportclub.get_trains_coach(@id_coach)", cnct);
+                cmd1.Parameters.AddWithValue("@id_coach", id_coach);
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd1);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.Columns["id_sportsman"].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Имя";
+
+                // Измените название второго столбца на "Фамилия"
+                dataGridView1.Columns[2].HeaderText = "Фамилия";
+                dataGridView1.Columns[3].HeaderText = "Количество тренировок в неделю";
+                dataGridView1.Columns[4].HeaderText = "Время тренировок";
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0 && allowActions==true)
@@ -452,6 +483,7 @@ namespace WindowsFormsApp1
         private void button7_Click(object sender, EventArgs e)
         {
             Allspcomp allspcomp = new Allspcomp();
+            allspcomp.idtypesport = idtypesport;
             allspcomp.Show();
         }
     }

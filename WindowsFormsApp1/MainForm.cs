@@ -120,8 +120,8 @@ namespace WindowsFormsApp1
                     }
 
                     reader.Close();
-                    label4.Text = $"Ваш тренер {name} {last_name} \n" +
-                        $"Количество тренировок в неделю {week} \nВремя занятий {time} мин.";
+                    label4.Text = $"Ваш тренер: {name} {last_name} \n" +
+                        $"Количество тренировок в неделю: {week} \nВремя занятий: {time} мин.";
                 }
                 else
                 {

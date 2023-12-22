@@ -38,36 +38,40 @@
             // name_comp
             // 
             this.name_comp.FormattingEnabled = true;
-            this.name_comp.Location = new System.Drawing.Point(217, 80);
+            this.name_comp.Location = new System.Drawing.Point(163, 65);
+            this.name_comp.Margin = new System.Windows.Forms.Padding(2);
             this.name_comp.Name = "name_comp";
-            this.name_comp.Size = new System.Drawing.Size(190, 24);
+            this.name_comp.Size = new System.Drawing.Size(202, 21);
             this.name_comp.TabIndex = 0;
             this.name_comp.SelectedIndexChanged += new System.EventHandler(this.name_comp_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 88);
+            this.label1.Location = new System.Drawing.Point(20, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 16);
+            this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Название соревнования";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 157);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 128);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(667, 181);
+            this.dataGridView1.Size = new System.Drawing.Size(500, 147);
             this.dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(177, 369);
+            this.button1.Location = new System.Drawing.Point(163, 297);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 40);
+            this.button1.Size = new System.Drawing.Size(172, 32);
             this.button1.TabIndex = 3;
             this.button1.Text = "Показать";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,16 +79,17 @@
             // 
             // Allspcomp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name_comp);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Allspcomp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Спорсмены в соревнованиях";
+            this.Text = "Участники соревнований";
             this.Load += new System.EventHandler(this.Allspcomp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

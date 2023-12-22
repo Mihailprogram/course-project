@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+        public int idtypesport = 0;
         private void Allspcomp_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -36,8 +36,9 @@ namespace WindowsFormsApp1
                     cnct.Open();
 
                     // SQL-запрос для выборки видов спорта из таблицы type_sport
-                    cmd.CommandText = "SELECT name_competition FROM sportclub.sport_competition";
+                    cmd.CommandText = "SELECT name_competition FROM sportclub.sport_competition WHERE id_type_sport = @idtypesport";
 
+                    cmd.Parameters.AddWithValue("@idtypesport", idtypesport);
                     using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -56,6 +57,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try { 
             string namecomp = name_comp.Text;
 
             NpgsqlCommand cmds = new NpgsqlCommand("SELECT * FROM sportclub.select_allsportsman(@namecomp)", cnct);
@@ -70,6 +72,11 @@ namespace WindowsFormsApp1
             // Измените название второго столбца на "Фамилия"
             dataGridView1.Columns[1].HeaderText = "Фамилия";
             dataGridView1.Columns[2 ].HeaderText = "Возраст";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 

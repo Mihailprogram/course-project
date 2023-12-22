@@ -47,6 +47,11 @@ namespace WindowsFormsApp1
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Успешно");
                 this.Close();
+
+                if (Application.OpenForms["FormCoach"] is FormCoach form1)
+                {
+                    form1.upForms();
+                }
             }
             catch(Exception ex)
             {
