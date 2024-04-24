@@ -16,8 +16,10 @@ namespace WindowsFormsApp1
     public partial class CreatResult : Form
     {
         static String connection = Properties.Settings.Default.pgConnection;
-
+        // Подключение к базе данных PostgreSQL
         NpgsqlConnection cnct = new NpgsqlConnection(connection);
+        // Переменная для хранения ID спортсмена
+
         public int idsportsman;
         public CreatResult()
         {
@@ -75,7 +77,7 @@ namespace WindowsFormsApp1
             }
 
         }
-
+        // Обработчик нажатия кнопки "Добавить результат"
         private void btaddres_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)

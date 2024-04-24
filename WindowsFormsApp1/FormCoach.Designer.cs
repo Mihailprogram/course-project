@@ -81,22 +81,22 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 107);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 122);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(611, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(756, 381);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(5, 347);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(10, 584);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 65);
+            this.button1.Size = new System.Drawing.Size(129, 55);
             this.button1.TabIndex = 7;
             this.button1.Text = "Показать список тренировок";
             this.button1.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(249, 347);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(296, 582);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 65);
+            this.button2.Size = new System.Drawing.Size(117, 57);
             this.button2.TabIndex = 8;
             this.button2.Text = "Добавить травму";
             this.button2.UseVisualStyleBackColor = false;
@@ -119,10 +119,10 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(139, 347);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(165, 582);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 65);
+            this.button3.Size = new System.Drawing.Size(115, 57);
             this.button3.TabIndex = 9;
             this.button3.Text = "Изменить";
             this.button3.UseVisualStyleBackColor = false;
@@ -133,8 +133,8 @@
             this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(659, 358);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(880, 650);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(104, 48);
             this.button4.TabIndex = 10;
@@ -146,10 +146,10 @@
             // 
             this.butInjur.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butInjur.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butInjur.Location = new System.Drawing.Point(630, 107);
-            this.butInjur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butInjur.Location = new System.Drawing.Point(799, 89);
+            this.butInjur.Margin = new System.Windows.Forms.Padding(2);
             this.butInjur.Name = "butInjur";
-            this.butInjur.Size = new System.Drawing.Size(161, 81);
+            this.butInjur.Size = new System.Drawing.Size(161, 70);
             this.butInjur.TabIndex = 11;
             this.butInjur.Text = "Список травмированны спортсменов";
             this.butInjur.UseVisualStyleBackColor = false;
@@ -159,10 +159,10 @@
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(357, 347);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(427, 580);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 65);
+            this.button5.Size = new System.Drawing.Size(129, 59);
             this.button5.TabIndex = 12;
             this.button5.Text = "Записать на соревнование";
             this.button5.UseVisualStyleBackColor = false;
@@ -172,10 +172,10 @@
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(490, 347);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Location = new System.Drawing.Point(569, 580);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 65);
+            this.button6.Size = new System.Drawing.Size(132, 59);
             this.button6.TabIndex = 13;
             this.button6.Text = "Результат соревнования";
             this.button6.UseVisualStyleBackColor = false;
@@ -185,8 +185,8 @@
             // 
             this.btAchiv.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btAchiv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btAchiv.Location = new System.Drawing.Point(630, 192);
-            this.btAchiv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAchiv.Location = new System.Drawing.Point(799, 180);
+            this.btAchiv.Margin = new System.Windows.Forms.Padding(2);
             this.btAchiv.Name = "btAchiv";
             this.btAchiv.Size = new System.Drawing.Size(161, 63);
             this.btAchiv.TabIndex = 14;
@@ -198,8 +198,8 @@
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(630, 262);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(799, 278);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(161, 81);
             this.button7.TabIndex = 15;
@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 432);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btAchiv);
             this.Controls.Add(this.button6);
@@ -226,8 +226,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCoach";
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тренер";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCoach_FormClosing);

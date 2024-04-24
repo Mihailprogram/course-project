@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         static String connection = Properties.Settings.Default.pgConnection;
 
         NpgsqlConnection cnct = new NpgsqlConnection(connection);
+        // Просмотр достижения
         private void SPachivment_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

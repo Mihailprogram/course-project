@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
 
 
         }
-
+        // Метод для создания кнопки с закругленными углами
         private void RoundButtonCorners(Control control, int cornerRadius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -83,18 +83,17 @@ namespace WindowsFormsApp1
             path.CloseFigure();
             control.Region = new Region(path);
         }
-
+        // Создание профиля для тренера
         private void button1_Click(object sender, EventArgs e)
         {
             FormCreatCoach formCreatCoach = new FormCreatCoach();
-           // this.Hide();
             formCreatCoach.Show();
         }
-
+        // Просмотр всех тренеров
         private void button2_Click(object sender, EventArgs e)
         {
 
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT id_coach AS \"ID\",userid,name AS \"Имя\",last_name AS \"Фамилия\",age AS \"Возраст\",experience AS \"Опыт\",date_of_birth AS \"Дата рождения\",(SELECT sport_type FROM sportclub.type_sport WHERE id_sport_type = p.id_sport_type) AS \"Тип спорта\" FROM sportclub.coach AS p", cnct);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM sportclub.viewauth1", cnct);
             cmd.Connection = cnct;
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -104,10 +103,10 @@ namespace WindowsFormsApp1
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["userid"].Visible = false;
         }
-
+        // Просмотр всех спорсменов
         private void button3_Click(object sender, EventArgs e)
         {
-            NpgsqlCommand cmd = new NpgsqlCommand("SELECT id_sportsman AS \"ID\",userid,name AS \"Имя\",last_name AS \"Фамилия\",age AS \"Возраст\",date_of_birth AS \"Дата рождения\",(SELECT sport_type FROM sportclub.type_sport WHERE id_sport_type = p.id_sport_type) AS \"Тип спорта\" FROM sportclub.sportsman AS p", cnct);
+            NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM sportclub.view_sportsman", cnct);
             cmd.Connection = cnct;
             NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -122,18 +121,18 @@ namespace WindowsFormsApp1
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            dataGridView1.ReadOnly = true;
             cnct.Open();
 
             dataGridView1.BackgroundColor = Color.White;
         }
-        
 
 
+        // Создание профиля для спортсмена
         private void button4_Click(object sender, EventArgs e)
         {
             Registration registration = new Registration();
             registration.flagadmin = flagadmin;
-            //this.Hide();
             registration.Show();
         }
 
@@ -154,7 +153,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        //Удаление
         private void button5_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -219,7 +218,7 @@ namespace WindowsFormsApp1
 
             }
         }
-
+        //Изменение
         private void button5_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -269,13 +268,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Пожалуйста, выберите строку в таблице для удаление данных.");
             }
         }
-
+        // Добавление сорвенования
         private void button6_Click(object sender, EventArgs e)
         {
             FormCup formCompet = new FormCup();
             formCompet.Show();
         }
-
+        // Выход из фомы
         private void button7_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Вы действительно хотите выйти?",
@@ -291,6 +290,37 @@ namespace WindowsFormsApp1
                 authorization.Show();
 
             }
+        }
+        // Фильтрация данных по имени
+        private void SearhButton_Click(object sender, EventArgs e)
+        {
+            string searchName = textBoxSearch.Text.Trim();
+
+            
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("Имя LIKE '%{0}%'", searchName);
+        }
+        // Сброс фильтров
+        private void butBreack_Click(object sender, EventArgs e)
+        {
+            textBoxSearch.Text = "";
+            textfilter.Text = "";
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = "";
+        }
+        // Фильтрация данных по возрасту
+        private void butfilter_Click(object sender, EventArgs e)
+        {
+            string textfilters = textfilter.Text.Trim();
+
+            // Проверка, что введенное значение - это число
+            if (!int.TryParse(textfilters, out int ageFilter))
+            {
+                MessageBox.Show("Введите корректное значение для фильтрации по возрасту.");
+                return;
+            }
+
+
+(           dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Возраст = '{ageFilter.ToString()}'";
         }
     }
 

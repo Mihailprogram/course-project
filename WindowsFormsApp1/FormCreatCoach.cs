@@ -21,10 +21,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             comboBoxSport.DropDownStyle = ComboBoxStyle.DropDownList;
-           // this.FormClosing += new FormClosingEventHandler(FormCreatCoach_FormClosing);
+      
         }
        
 
+        //Регистраци тренера
         private void button1_Click(object sender, EventArgs e)
         {
             string login = textBoxLogin.Text;
@@ -32,60 +33,76 @@ namespace WindowsFormsApp1
             string lastName = textBoxLastName.Text;
             string firstName = textBoxFirstName.Text;
             string selectedSport = comboBoxSport.Text;
-            int experience = Convert.ToInt32(textBoxexp.Text);
             DateTime birthDate = dateTimePicker1.Value;
             DateTime currentDate = DateTime.Today;
 
+            int experience;
+            if (string.IsNullOrWhiteSpace(textBoxexp.Text) || !int.TryParse(textBoxexp.Text, out experience))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.");
+                return;
+            }
+
             int age = currentDate.Year - birthDate.Year;
 
-            if (currentDate.Month < birthDate.Month || (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(lastName) || string.IsNullOrWhiteSpace(firstName) ||
+                string.IsNullOrWhiteSpace(selectedSport))
             {
-                age--;
+                MessageBox.Show("Пожалуйста, заполните все поля.");
+                return;
             }
-            try
+            else
             {
-
-                // Вставка данных в таблицу "user"
-                string insertUserSql = "INSERT INTO sportclub.user " +
-                    "(login, password, roleid) VALUES (@login, @password, 2) RETURNING iduser";
-                using (NpgsqlCommand cmd = new NpgsqlCommand(insertUserSql, cnct))
+                if (currentDate.Month < birthDate.Month || (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
                 {
-                    cmd.Parameters.AddWithValue("@login", login);
-                    cmd.Parameters.AddWithValue("@password", password);
-
-                    // Получение ID только что созданного пользователя
-                    int userId = (int)cmd.ExecuteScalar();
-
-
-                    // Вставка данных в таблицу "sportman"
-
-                    string ins = "SELECT sportclub.insert_coach(@firstName,@age,@experience,@selectedSport,@lastName,@birthdate,@userId)";
-                    using (NpgsqlCommand sportmanCmd = new NpgsqlCommand(ins, cnct))
-                    {
-
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@age", NpgsqlDbType.Integer)).Value = age;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@selectedSport", NpgsqlDbType.Varchar)).Value = selectedSport;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@firstName", NpgsqlDbType.Varchar)).Value = firstName;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@lastName", NpgsqlDbType.Varchar)).Value = lastName;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@birthdate", NpgsqlDbType.Date)).Value = birthDate;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@userId", NpgsqlDbType.Integer)).Value = userId;
-                        sportmanCmd.Parameters.Add(new NpgsqlParameter("@experience", NpgsqlDbType.Integer)).Value = experience;
-                        sportmanCmd.ExecuteNonQuery();
-                    }
+                    age--;
                 }
 
-                MessageBox.Show("Данные успешно добавлены в базу данных.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении данных: " + ex.Message);
-            }
+                try
+                {
+                    // Вставка данных в таблицу "user"
+                    string insertUserSql = "INSERT INTO sportclub.user " +
+                        "(login, password, roleid) VALUES (@login, @password, 2) RETURNING iduser";
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(insertUserSql, cnct))
+                    {
+                        cmd.Parameters.AddWithValue("@login", login);
+                        cmd.Parameters.AddWithValue("@password", password);
 
-            // Отобразите форму Registration
+                        // Получение ID только что созданного пользователя
+                        int userId = (int)cmd.ExecuteScalar();
 
-            this.Close();
-            cnct.Close();
-            Application.OpenForms["FormAdmin"].Show();
+
+                        // Вставка данных в таблицу "sportman"
+
+                        string ins = "SELECT sportclub.insert_coach(@firstName,@age,@experience,@selectedSport,@lastName,@birthdate,@userId)";
+                        using (NpgsqlCommand sportmanCmd = new NpgsqlCommand(ins, cnct))
+                        {
+
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@age", NpgsqlDbType.Integer)).Value = age;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@selectedSport", NpgsqlDbType.Varchar)).Value = selectedSport;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@firstName", NpgsqlDbType.Varchar)).Value = firstName;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@lastName", NpgsqlDbType.Varchar)).Value = lastName;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@birthdate", NpgsqlDbType.Date)).Value = birthDate;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@userId", NpgsqlDbType.Integer)).Value = userId;
+                            sportmanCmd.Parameters.Add(new NpgsqlParameter("@experience", NpgsqlDbType.Integer)).Value = experience;
+                            sportmanCmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Данные успешно добавлены в базу данных.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении данных: " + ex.Message);
+                }
+
+                // Отобразите форму Registration
+
+                this.Close();
+                cnct.Close();
+                Application.OpenForms["FormAdmin"].Show();
+            }
 
         }
 
@@ -93,6 +110,7 @@ namespace WindowsFormsApp1
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            dateTimePicker1.Value = new DateTime(2004, 5, 15);
 
             using (NpgsqlCommand cmd = new NpgsqlCommand())
             {

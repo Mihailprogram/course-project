@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             this.MaximizeBox = false;
             cnct.Open();
         }
-
+        // Метод для добавления трамы спорсмену
         private void button1_Click(object sender, EventArgs e)
         {
             try

@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
 
 
         }
-
+        // Метод для создания кнопки с закругленными углами
         private void RoundButtonCorners(Control control, int cornerRadius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -191,7 +191,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Ошибка!!: " + ex.Message);
             }
         }
-
+        // Показывает списко спорсменов
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -256,6 +256,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show(ex.Message);
             }
         }
+        //Изменение тренировки
         private void button3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0 && allowActions==true)
@@ -287,6 +288,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Добавление травмированных спорсменов
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0 && allowActions==true)
@@ -310,7 +312,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        // Выход на форму с аунтификацией
         private void button4_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Вы действительно хотите выйти?",
@@ -345,7 +347,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        // Метод показывает список травмированных спорсмменов
         private void butInjur_Click(object sender, EventArgs e)
         {
             try
@@ -374,6 +376,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Запись на соревнование
         private void button5_Click(object sender, EventArgs e)
         {
 
@@ -423,7 +426,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        // Метод показывает результат соревнования
         private void button6_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0 && allowActions == true)
@@ -448,7 +451,7 @@ namespace WindowsFormsApp1
 
             }
         }
-
+        // Показывает списко достижений спорсменов
         private void btAchiv_Click(object sender, EventArgs e)
         {
             allowActions = false;
@@ -479,7 +482,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("ERR" + ex.Message);
             }
         }
-
+        // Показывает список участников соревнования
         private void button7_Click(object sender, EventArgs e)
         {
             Allspcomp allspcomp = new Allspcomp();

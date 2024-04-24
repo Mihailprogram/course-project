@@ -28,13 +28,14 @@ namespace WindowsFormsApp1
         static String connection = Properties.Settings.Default.pgConnection;
 
         NpgsqlConnection cnct = new NpgsqlConnection(connection);
-
+        // Изменение тренировки
         private void button1_Click(object sender, EventArgs e)
         {
-            int count = Convert.ToInt32(comboBoxCount.Text);
-            int time = Convert.ToInt32(comboBoxTime.Text);
+           
             try
             {
+                int count = Convert.ToInt32(comboBoxCount.Text);
+                int time = Convert.ToInt32(comboBoxTime.Text);
                 string sql = "UPDATE sportclub.traning SET count_traning_week = @count, traning_time = @time WHERE id_sportsman = @idUser and id_coach=@id_coach";
 
             
@@ -55,7 +56,7 @@ namespace WindowsFormsApp1
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Eror" + ex.Message);
+                MessageBox.Show("Eror " + ex.Message);
             }
         }
 

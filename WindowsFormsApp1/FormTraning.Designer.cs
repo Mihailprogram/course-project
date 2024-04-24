@@ -40,44 +40,49 @@
             // comboBoxTrener
             // 
             this.comboBoxTrener.FormattingEnabled = true;
-            this.comboBoxTrener.Location = new System.Drawing.Point(85, 97);
+            this.comboBoxTrener.Location = new System.Drawing.Point(130, 80);
+            this.comboBoxTrener.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTrener.Name = "comboBoxTrener";
-            this.comboBoxTrener.Size = new System.Drawing.Size(145, 24);
+            this.comboBoxTrener.Size = new System.Drawing.Size(110, 21);
             this.comboBoxTrener.TabIndex = 0;
             this.comboBoxTrener.SelectedIndexChanged += new System.EventHandler(this.comboBoxTrener_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(82, 55);
+            this.label1.Location = new System.Drawing.Point(128, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Тренер";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 141);
+            this.label2.Location = new System.Drawing.Point(128, 116);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 16);
+            this.label2.Size = new System.Drawing.Size(160, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Количесвто занятий в неделю";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 215);
+            this.label3.Location = new System.Drawing.Point(128, 176);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 16);
+            this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Время занятий в минутах";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(85, 302);
+            this.button1.Location = new System.Drawing.Point(130, 246);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 52);
+            this.button1.Size = new System.Drawing.Size(108, 42);
             this.button1.TabIndex = 6;
             this.button1.Text = "Записаться";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,26 +91,28 @@
             // comboBoxCount
             // 
             this.comboBoxCount.FormattingEnabled = true;
-            this.comboBoxCount.Location = new System.Drawing.Point(85, 177);
+            this.comboBoxCount.Location = new System.Drawing.Point(130, 145);
+            this.comboBoxCount.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCount.Name = "comboBoxCount";
-            this.comboBoxCount.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCount.Size = new System.Drawing.Size(92, 21);
             this.comboBoxCount.TabIndex = 7;
             this.comboBoxCount.SelectedIndexChanged += new System.EventHandler(this.comboBoxCount_SelectedIndexChanged);
             // 
             // comboBoxTime
             // 
             this.comboBoxTime.FormattingEnabled = true;
-            this.comboBoxTime.Location = new System.Drawing.Point(85, 255);
+            this.comboBoxTime.Location = new System.Drawing.Point(130, 208);
+            this.comboBoxTime.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTime.Name = "comboBoxTime";
-            this.comboBoxTime.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxTime.Size = new System.Drawing.Size(92, 21);
             this.comboBoxTime.TabIndex = 8;
             this.comboBoxTime.SelectedIndexChanged += new System.EventHandler(this.comboBoxTime_SelectedIndexChanged);
             // 
             // FormTraning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 426);
+            this.ClientSize = new System.Drawing.Size(390, 363);
             this.Controls.Add(this.comboBoxTime);
             this.Controls.Add(this.comboBoxCount);
             this.Controls.Add(this.button1);
@@ -113,6 +120,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTrener);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTraning";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Тренировка";

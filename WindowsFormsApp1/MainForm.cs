@@ -71,12 +71,12 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            cnct.Open();
-            //label4
+            
 
             try
             {
-                
+                cnct.Open();
+
                 string sql = "SELECT id_sportsman FROM sportclub.sportsman " +
                     "WHERE userid=@userId";
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, cnct);
@@ -102,7 +102,7 @@ namespace WindowsFormsApp1
                 cmdinj.Parameters.AddWithValue("@id_sportsman", id_sportsman);
                 object resulinj = cmdinj.ExecuteScalar();
                 int injur = Convert.ToInt32(resulinj);
-                //MessageBox.Show(count.ToString());
+          
                     if (traning > 0 && injur==0)
                 {
                     button1.Visible = false;
@@ -207,6 +207,7 @@ namespace WindowsFormsApp1
             }
 
         }
+        // Запись на тренировку
         private void button1_Click(object sender, EventArgs e)
         {
             FormTraning formTraning = new FormTraning();
@@ -218,7 +219,7 @@ namespace WindowsFormsApp1
             flagUser = false;
             this.Close();
         }
-
+        // Метод который обнуляет тренировки
         private void button3_Click(object sender, EventArgs e)
         {
             cnct.Open();
@@ -240,7 +241,7 @@ namespace WindowsFormsApp1
             mainForm.Show();
             cnct.Close();
         }
-
+        // Редактирование тренировки
         private void button2_Click(object sender, EventArgs e)
         {
             cnct.Open();
@@ -280,7 +281,7 @@ namespace WindowsFormsApp1
             this.Close();
             cnct.Close();
         }
-
+        // Выход
         private void button4_Click(object sender, EventArgs e)
         {
             
@@ -317,7 +318,7 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        // Просмотр достижения
         private void button5_Click(object sender, EventArgs e)
         {
             SPachivment sPachivment = new SPachivment();

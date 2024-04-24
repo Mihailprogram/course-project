@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
             ID = id;
 
         }
+        // Изменение тренера
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBoxFirstName.Text;

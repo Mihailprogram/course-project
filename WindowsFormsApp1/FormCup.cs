@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        // Создание соревнования
         private void button1_Click(object sender, EventArgs e)
         {
             DateTime date = dateTimePicker1.Value;

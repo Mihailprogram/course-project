@@ -79,20 +79,22 @@ namespace WindowsFormsApp1
             }
         }
         public event Action<int> UserLoggedIn;
+        // Запись на тренировку спорсмена
         private void button1_Click(object sender, EventArgs e)
         {
-            string text = comboBoxTrener.Text;
-            int count = Convert.ToInt32(comboBoxCount.Text);
-            int time = Convert.ToInt32(comboBoxTime.Text);
-            int idtren = 0;
-            if (text.Length > 0)
-            {
-                string[] maspick = text.Split(' ');
-                idtren = Convert.ToInt32(maspick.Last());
-            }
-            string sql = "";
+            
             try
             {
+                string text = comboBoxTrener.Text;
+                int count = Convert.ToInt32(comboBoxCount.Text);
+                int time = Convert.ToInt32(comboBoxTime.Text);
+                int idtren = 0;
+                if (text.Length > 0)
+                {
+                    string[] maspick = text.Split(' ');
+                    idtren = Convert.ToInt32(maspick.Last());
+                }
+                string sql = "";
 
                 if (flag == false)
                 {
@@ -135,7 +137,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Вы уже записаны к этому тренеру "+ ex.Message);
+                MessageBox.Show( ex.Message);
             }
         }
 

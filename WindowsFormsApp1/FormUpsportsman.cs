@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
             comboBoxSport.Text = data4;
             ID = id;
         }
-
+        // Редактирование спорсмена
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBoxFirstName.Text;

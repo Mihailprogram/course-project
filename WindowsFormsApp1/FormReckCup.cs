@@ -81,7 +81,7 @@ namespace WindowsFormsApp1
             }
             
         }
-
+        // Метод для записи спорсмнов на сорвнования
         private void button1_Click(object sender, EventArgs e)
         {
                 if (dataGridView1.SelectedRows.Count > 0)
